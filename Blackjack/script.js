@@ -24,10 +24,16 @@ let gameStarted = false,
 	dealerScore = 0,
 	playerScore = 0,
 	deck = [];
-	tieGame = false;
+	tieGame = false,
+	dealerCount = 0,
+	playerCount = 0;
+	tieCount = 0;
 
 hitButton.style.display = "none";
 stayButton.style.display = "none";
+document.getElementById('playerCount').style.display = "none";
+document.getElementById('dealerCount').style.display = "none";
+document.getElementById('tieCount').style.display = "none";
 showStatus();
 
 newGameButton.addEventListener('click', function(){
@@ -46,6 +52,9 @@ newGameButton.addEventListener('click', function(){
 	newGameButton.style.display = 'none';
 	hitButton.style.display = 'inline';
 	stayButton.style.display = 'inline';
+	document.getElementById('playerCount').style.display = "block";
+	document.getElementById('dealerCount').style.display = "block";
+	document.getElementById('tieCount').style.display = "block";
 	checkForEOG();
 	showStatus();
 });
@@ -207,12 +216,19 @@ function showStatus() {
 		'(score: ' + playerScore + ')\n\n';
 
 	if (gameOver) {
-		if (playerWon)
+		if (playerWon){
 			textArea.innerText += "You Win!";
-		else if (tieGame)
+			playerCount += 1;
+			document.getElementById('playerCount').innerText = "Player Rounds: " + playerCount;
+		}else if (tieGame){
 			textArea.innerText += "Tie Game!";
-		else 
+			tieCount += 1;
+			document.getElementById("tieCount").innerText = "Tie Rounds: " + tieCount;
+		}else {
 			textArea.innerText += "Dealer Wins!";
+			dealerCount += 1;
+			document.getElementById('dealerCount').innerText = "Dealer Rounds: " + dealerCount;
+		}
 
 		newGameButton.style.display = 'inline';
 		hitButton.style.display = 'none';
