@@ -1,0 +1,41 @@
+/* CSS for class */
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 97vh;
+}
+.container>div {
+	text-align: center;
+	width: 300px;
+}
+
+/* CSS for default */
+ h1 {
+	color: blue;
+}
+body {
+	background-color: lightblue;
+	min-height: 400px;
+	min-width: 300px;
+}
+
+/* CSS for id */
+#new-game {
+	margin-top: 10px;
+	font-size: 15px;
+}
+#hit-button {
+	background-color: white;
+	color: green;
+	border-radius: 2px;
+	margin-top: 10px;
+	font-size: 15px
+		}
+#stay-button {
+	background-color: white;
+	color: red;
+	border-radius: 2px;
+	font-size: 15px;
+	margin-top: 10px;
+}
