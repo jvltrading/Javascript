@@ -1,0 +1,36 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-weight: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: cadetblue;
+}
+
+.container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(120px, auto) repeat(5, 100px);
+}
+
+.calc {
+    font-weight: normal;
+    justify-content: center;
+}
+
+.num {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 10em;
+    align-content: center;
+}
+
+h2 {
+    justify-content: center;
+}
